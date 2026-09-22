@@ -23,4 +23,5 @@
 - Check console and network errors.
 - Verify metadata, canonical URL, sitemap, robots policy, and social previews.
 - Run a secret scan and confirm client/private data is excluded.
-- Perform a deployment dry run before publishing.
+- Perform a deployment dry run before publishing. For Cloudflare Pages, use `wrangler pages deploy <directory> --project-name <name>` and confirm the deployment URL.
+- Search the built files for expiring stock-CDN URLs and account-scoped media paths before the upload.

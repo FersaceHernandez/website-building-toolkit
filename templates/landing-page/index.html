@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Business name] · [Service] in [City]</title>
+  <meta name="description" content="Replace this description with the real service, city, and response promise." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1915;
+      --paper: #f3eee6;
+      --card: #fffaf3;
+      --oxide: #c2410c;
+      --oxide-dark: #9a3412;
+      --line: #e3d7c6;
+      --muted: #5e564c;
+      --shadow: 0 18px 40px rgba(28, 25, 21, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Outfit, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--oxide); outline-offset: 3px; }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: white;
+      padding: 0.6rem 0.9rem;
+      z-index: 10;
+    }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(10px);
+    }
+    .logo { font-family: Fraunces, serif; font-size: 1.35rem; text-decoration: none; }
+    .nav a.phone {
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.7rem 1rem;
+      font-weight: 600;
+    }
+    .hero { display: grid; gap: 1.5rem; padding: 1.2rem 0 3rem; }
+    .kicker {
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--oxide-dark);
+      font-weight: 600;
+    }
+    h1, h2 { font-family: Fraunces, serif; font-weight: 560; letter-spacing: -0.03em; line-height: 0.98; }
+    h1 { font-size: clamp(3rem, 10vw, 6.4rem); margin: 0.35rem 0 0.8rem; }
+    h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0 0 0.8rem; }
+    .lede { font-size: 1.15rem; max-width: 38rem; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.3rem 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+    .btn.primary { background: var(--oxide); color: white; }
+    .btn.primary:hover { background: var(--oxide-dark); }
+    .btn.ghost { border-color: var(--ink); }
+    .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+    .pills li { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.92rem; }
+    .frame {
+      min-height: 280px;
+      border-radius: 1.4rem;
+      background:
+        linear-gradient(160deg, rgba(194, 65, 12, 0.18), transparent 42%),
+        repeating-linear-gradient(135deg, #efe4d4 0 12px, #e7d9c4 12px 24px);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: end start;
+      padding: 1rem;
+    }
+    .frame span { background: var(--card); border-radius: 0.8rem; padding: 0.7rem 0.85rem; }
+    section { padding: 3.2rem 0; }
+    .section-head { max-width: 40rem; margin-bottom: 1.4rem; }
+    .grid { display: grid; gap: 0.9rem; }
+    .card, .step, details, form, .quote {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1rem;
+    }
+    .card h3, .step h3 { margin: 0.3rem 0; font-size: 1.2rem; }
+    .num { font-family: Fraunces, serif; color: var(--oxide); font-size: 1.8rem; }
+    .quote p { margin-top: 0; }
+    .quote footer { color: var(--muted); }
+    form { display: grid; gap: 0.8rem; }
+    label { display: grid; gap: 0.3rem; font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 0.7rem;
+      padding: 0.75rem;
+      font: inherit;
+      background: white;
+    }
+    button.btn { cursor: pointer; }
+    .note { color: var(--muted); font-size: 0.92rem; }
+    footer.site {
+      border-top: 1px solid var(--line);
+      padding: 1.4rem 0 2rem;
+      color: var(--muted);
+    }
+    @media (min-width: 800px) {
+      .hero { grid-template-columns: 1.1fr 0.9fr; align-items: end; padding-top: 2rem; }
+      .grid.three { grid-template-columns: repeat(3, 1fr); }
+      .grid.two { grid-template-columns: 1.1fr 0.9fr; }
+      .frame { min-height: 460px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap nav">
+    <a class="logo" href="#main">[Business name]</a>
+    <a class="phone" href="tel:+10000000000">Call [phone]</a>
+  </header>
+  <main id="main">
+    <section class="wrap hero">
+      <div>
+        <p class="kicker">[City] · [license or years, if true]</p>
+        <h1>[Service], booked this week.</h1>
+        <p class="lede">Replace this with one concrete promise: response time, service area, and what the customer gets. Do not leave the brackets in a published page.</p>
+        <div class="actions">
+          <a class="btn primary" href="tel:+10000000000">Call now</a>
+          <a class="btn ghost" href="sms:+10000000000">Text [phone]</a>
+        </div>
+        <ul class="pills">
+          <li>[Proof point]</li>
+          <li>[Hours]</li>
+          <li>[Service area]</li>
+        </ul>
+      </div>
+      <div class="frame" role="img" aria-label="Replace with a real job photo">
+        <span>REPLACE: real photo of the work. Do not hotlink a stock CDN.</span>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head">
+        <p class="kicker">Services</p>
+        <h2>What you can book.</h2>
+      </div>
+      <div class="grid three">
+        <article class="card"><p class="num">01</p><h3>[Service one]</h3><p>[Who it is for and what is included.]</p></article>
+        <article class="card"><p class="num">02</p><h3>[Service two]</h3><p>[A specific detail, not a slogan.]</p></article>
+        <article class="card"><p class="num">03</p><h3>[Service three]</h3><p>[Price, timing, or constraint if you can verify it.]</p></article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <p class="kicker">Process</p>
+        <h2>From the first call to done.</h2>
+      </div>
+      <div class="grid three">
+        <article class="step"><p class="num">1</p><h3>Call or text</h3><p>[What the customer should have ready.]</p></article>
+        <article class="step"><p class="num">2</p><h3>[Visit or quote]</h3><p>[How the estimate actually works.]</p></article>
+        <article class="step"><p class="num">3</p><h3>[The work]</h3><p>[What finished looks like.]</p></article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <p class="kicker">Proof</p>
+        <h2>Real reviews only.</h2>
+        <p class="note">Delete these cards or replace them with attributable reviews. Do not invent customers.</p>
+      </div>
+      <div class="grid two">
+        <blockquote class="quote">
+          <p>[Quote pulled from a real review.]</p>
+          <footer>[First name, last initial] · [City]</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>[A second review, different detail.]</p>
+          <footer>[First name, last initial] · [City]</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="grid two">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Talk to [owner or crew].</h2>
+          <p class="lede">[Hours]. [Address]. Expect a reply [timeframe].</p>
+          <p><a href="tel:+10000000000">[phone]</a></p>
+        </div>
+        <form action="REPLACE-WITH-FORM-ENDPOINT" method="post">
+          <label>Name <input name="name" autocomplete="name" required /></label>
+          <label>Phone <input name="phone" type="tel" autocomplete="tel" required /></label>
+          <label>What do you need? <textarea name="job" rows="4" required></textarea></label>
+          <button class="btn primary" type="submit">Send</button>
+          <p class="note">This form does not go anywhere until you set a real endpoint and validate it on the server.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap site">
+    <p>[Business name] · [City] · [license number if required]</p>
+  </footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Local-business landing page template
 
-Use this as a content and implementation outline. Replace every placeholder with verified client-approved information.
+`index.html` is a single file: CSS in one `<style>` block, no build step, no stock-photo URLs. Open it, then replace every `[bracket]` with verified information.
 
 1. Hero: specific service, service area, proof point, and primary CTA.
 2. Trust: reviews, certifications, years in business, or project proof.

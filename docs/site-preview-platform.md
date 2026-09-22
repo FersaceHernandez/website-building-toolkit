@@ -17,7 +17,23 @@ This is a sanitized implementation note for a local-business preview workflow.
 - D1 or another relational store for metadata and expiry state.
 - R2 or another object store for rendered HTML.
 - A scheduled worker for cleanup.
-- Secret-manager bindings for operator authentication, email, and payment providers.
+- Secret-manager bindings for operator authentication. Do not commit those values.
+
+`platform/slug.mjs` is the slug rule this note describes. Run `node --test platform/slug.test.mjs`.
+
+Preview metadata is separate from customer and payment records:
+
+```sql
+CREATE TABLE previews (
+  slug TEXT PRIMARY KEY,
+  created_at INTEGER NOT NULL,
+  expires_at INTEGER NOT NULL,
+  status TEXT NOT NULL,
+  object_key TEXT NOT NULL
+);
+```
+
+`status` is `live`, `expired`, or `deleted`. Payment tables, card data, and buyer contact records do not belong in this repository.
 
 ## Safety boundaries
 

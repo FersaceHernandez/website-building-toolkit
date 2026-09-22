@@ -6,7 +6,8 @@ The workspace audit found the following website-building surfaces:
 | --- | --- | --- |
 | Site-preview system | Static preview pages, preview operations, Cloudflare Functions, and architecture notes | Generic architecture only |
 | Preview sales site | Landing-page copy and prospecting utilities | Not copied; contains business and operational details |
-| Cinematic hero engine | React/Vite source, assets, configuration, and packaged skill | Included |
+| Cinematic hero engine | React/Vite source, assets, configuration, and packaged skill | Included, without account-scoped media URLs |
+| Commercial hero templates | Third-party demo HTML and prompt specs | Not copied |
 | Standalone business sites | Client or prospect-branded HTML, images, and delivery material | Excluded |
 | Private business documentation | Proposals, growth plans, outreach, contact records, and delivery artifacts | Excluded |
 | Local operator skills | Website, Cloudflare, QA, performance, and copy workflows | Referenced by name; only the user-owned cinematic hero skill is included |
